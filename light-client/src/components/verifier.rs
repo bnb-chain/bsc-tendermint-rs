@@ -115,7 +115,6 @@ impl Verifier for ProdVerifier {
             &trusted,
             &untrusted,
             options,
-            now,
         )
         .into()
     }

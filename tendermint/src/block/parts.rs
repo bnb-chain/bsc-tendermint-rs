@@ -18,11 +18,10 @@ use tendermint_proto::Protobuf;
 #[serde(try_from = "RawPartSetHeader", into = "RawPartSetHeader")] // Used by KMS state file
 #[non_exhaustive]
 pub struct Header {
-    /// Number of parts in this block
-    pub total: u32,
-
     /// Hash of the parts set header,
     pub hash: Hash,
+    /// Number of parts in this block
+    pub total: u32,
 }
 
 impl Protobuf<RawPartSetHeader> for Header {}

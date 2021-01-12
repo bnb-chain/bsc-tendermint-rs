@@ -231,13 +231,7 @@ pub fn verify(
     trusted: &LightBlock,
     untrusted: &LightBlock,
     options: &Options,
-    now: Time,
 ) -> Result<(), VerificationError> {
-    // Ensure the latest trusted header hasn't expired
-    vp.is_within_trust_period(&trusted.signed_header.header, options.trusting_period, now)?;
-
-    // Ensure the header isn't from a future time
-    vp.is_header_from_past(&untrusted.signed_header.header, options.clock_drift, now)?;
 
     // Ensure the header validator hashes match the given validators
     vp.validator_sets_match(&untrusted, &*hasher)?;
@@ -253,12 +247,6 @@ pub fn verify(
         &untrusted.signed_header,
         &untrusted.validators,
         commit_validator,
-    )?;
-
-    // Check that the untrusted block is more recent than the trusted state
-    vp.is_monotonic_bft_time(
-        &untrusted.signed_header.header,
-        &trusted.signed_header.header,
     )?;
 
     let trusted_next_height = trusted.height().increment();
