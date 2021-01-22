@@ -1,3 +1,4 @@
+//! Light header verify
 use crate::account::Id as AccountId;
 use crate::hash::SHA256_HASH_SIZE;
 use crate::merkle::{simple_hash_from_byte_vectors, Hash};

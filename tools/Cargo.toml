@@ -1,6 +1,0 @@
-[workspace]
-
-members = [
-    "kvstore-test",
-    "rpc-probe"
-]

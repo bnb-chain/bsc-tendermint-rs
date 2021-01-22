@@ -173,7 +173,7 @@ impl Default for Vote {
 /// SignedVote is the union of a canonicalized vote, the signature on
 /// the sign bytes of that vote and the id of the validator who signed it.
 pub struct SignedVote {
-    pub vote: CanonicalVote,
+    vote: CanonicalVote,
     validator_address: account::Id,
     signature: Signature,
 }

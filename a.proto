@@ -1,5 +1,0 @@
-message Foo {
-    repeated int items = 1;
-}
-repeated Foo foos = 1;
-

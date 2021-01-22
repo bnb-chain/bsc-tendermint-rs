@@ -1,4 +1,4 @@
-//! Merkle proofs
+//! Iavl proofs
 use crate::hash::SHA256_HASH_SIZE;
 use crate::merkle::{simple_hash_from_byte_vectors, Hash};
 use crate::serializers;
@@ -446,7 +446,7 @@ fn decode_key_value_merkle_proof(input: &[u8]) -> Result<KeyValueMerkleProof, &'
         proof: proof.unwrap(),
     })
 }
-
+/// Iavl proof verification
 pub fn execute(input: &[u8], output: &mut BytesRef) -> Result<(), &'static str> {
     if input.len() <= PRECOMPILE_CONTRACT_INPUT_METADATA_LENGTH {
         return Err("invalid input: input should include 32 bytes payload length and payload");

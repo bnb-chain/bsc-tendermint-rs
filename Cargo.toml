@@ -1,15 +1,6 @@
 [workspace]
 
 members = [
-    "light-client",
-    "light-node",
-    "p2p",
     "proto",
-    "rpc",
     "tendermint",
-    "testgen"
-]
-
-exclude = [
-    "proto-compiler"
 ]
